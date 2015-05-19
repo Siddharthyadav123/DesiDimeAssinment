@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/VeryLightGray"
+    android:orientation="vertical" >
+
+    <!-- Custom Action Bar -->
+
+    <RelativeLayout
+        android:id="@+id/actionBarRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/action_bar_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/Red"
+        android:splitMotionEvents="false" >
+
+        <ImageView
+            android:id="@+id/menuDrawerImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/selector_red_effect"
+            android:src="@drawable/hm_menu_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="Deals"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+    </RelativeLayout>
+
+    <!-- Custom Tabs -->
+
+    <LinearLayout
+        android:id="@+id/tabsContainerRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionBarRelativeLayout"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <LinearLayout
+            android:id="@+id/topTabLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_red_effect"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/topTabTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top"
+                android:textColor="@color/Black" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/White" />
+
+        <LinearLayout
+            android:id="@+id/popularTabLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/selector_red_effect"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/PopularTabTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Popular"
+                android:textColor="@color/Black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Deals View Pager -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/dealsViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabsContainerRelativeLayout"
+        android:visibility="visible" >
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>
